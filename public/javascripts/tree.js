@@ -19,12 +19,12 @@
     function init() {
       if(cfg.canvas !== undefined) {
         context = cfg.canvas.getContext("2d");
-        // _makeBranch({start_x: cfg.initX
-                  // , start_y: cfg.initY
-                  // , length: cfg.branch_length
-                  // , angle: Math.abs(-Math.PI/2/Math.PI) - 90
-                  // , size: cfg.max_size
-        // });
+        _makeBranch({start_x: cfg.initX
+                  , start_y: cfg.initY
+                  , length: cfg.branch_length
+                  , angle: Math.abs(-Math.PI/2/Math.PI) - 90
+                  , size: cfg.max_size
+        });
         cfg
       }
     }
