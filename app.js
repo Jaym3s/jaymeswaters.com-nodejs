@@ -3,9 +3,9 @@
  * Module dependencies.
  */
 
-var express = require('express')
-    io = require('socket.io');
-var app = module.exports = express.createServer();
+var express = require('express');
+var app = module.exports = express.createServer()
+  , io = require('socket.io').listen(app);
 
 // Configuration
 
@@ -54,9 +54,8 @@ console.log("Express server listening on port %d in %s mode", app.address().port
 
 // sockets
 
-var sio = io.listen(app);
-
-sio.sockets.on('connection', function (socket) {
-    console.log('A socket connected!');
+io.sockets.on('connection', function (socket) {
+  socket.emit('twitter', { hello: 'world' });
+  console.log('A socket connected!');
 });
 
