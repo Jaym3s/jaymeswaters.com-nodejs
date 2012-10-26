@@ -3,16 +3,19 @@ body
   :-moz-font-smoothing antialiased
   :background-color rgb(33,33,33)
   :color rgb(166,166,166)
-  :padding 50px
   :text-shadow -5px 5px 10px rgb(80,80,80)
   :font 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+header
+  :margin 0 auto
+  :width 300px
 
 h1
   :color rgb(186,186,186)
 
 section
-  :float left
-  :width 50%
+  :margin 0 auto
+  :width 300px
   h3
     :color rgb(190,190,190)
 
@@ -35,45 +38,46 @@ a
   :-ms-transform-style preserve-3d
   :-o-transform-style preserve-3d
   :transform-style preserve-3d
+
+  dd, dt
+    :background-image url(/images/woodgrain2.png)
+    :text-indent 10px
+    :line-height 55px
+    :margin 0
+    :height 70px
+    :width 300px
+    :color #fff
+
   a
     :display block
-    :color #fff
-    &:hover
-      // :text-indent 20px
 
-  ul
-    -webkit-transform: perspective(600px) translateZ(1px) !important;
-    -moz-transform: perspective(600px) translateZ(1px) !important;
-    -ms-transform: perspective(600px) translateZ(1px) !important;
-    -o-transform: perspective(600px) translateZ(1px) !important;
-    transform: perspective(600px) translateZ(1px) !important;
-    left: 50%;
+  dl
+    :-webkit-transform perspective(600px) translateZ(1px) !important
+    :-moz-transform perspective(600px) translateZ(1px) !important
+    :-ms-transform perspective(600px) translateZ(1px) !important
+    :-o-transform perspective(600px) translateZ(1px) !important
+    :transform perspective(600px) translateZ(1px) !important
 
-  li
-    text-indent: 10px
-    line-height: 55px
-    background: #E0FBAC
-    margin: 0
-    height: 55px
-    width: 270px
-    color: #fff
-    border-top: 1px dashed rgba(255,255,255,0.3)
-    line-height: 35px
-    font-size: 11px
-    height: 35px
-    margin: 0
-  // dt
-    // -webkit-transform: translateZ(0.3px)
-    // -moz-transform: translateZ(0.3px)
-    // -ms-transform: translateZ(0.3px)
-    // -o-transform: translateZ(0.3px)
-    // transform: translateZ(0.3px)
-    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2)
-    // font-size: 15px
+  dd
+    :border-top 1px dashed rgba(255,255,255,0.3)
+    :line-height 35px
+    :font-size 11px
+    :height 35px
+    :margin 0
 
+  dt
+    :-webkit-transform translateZ(0.3px)
+    :-moz-transform translateZ(0.3px)
+    :-ms-transform translateZ(0.3px)
+    :-o-transform translateZ(0.3px)
+    :transform translateZ(0.3px)
+    :text-shadow 1px 1px 2px rgba(0, 0, 0, 0.2)
+    :font-size 15px
 
 footer
-  :clear both
+  :position fixed
+  :bottom 0px
   :width 100%
   p
+    :margin 0 auto
     :color rgb(100,100,100)

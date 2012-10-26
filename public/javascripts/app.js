@@ -12,7 +12,7 @@ $().ready(function() {
     var $maki = $( '.list' );
 
     console.log(' // Create Makisus');
-    $maki.makisu({ selector: 'li', overlap: 0.6, speed: 0.85 });
+    $maki.makisu({ selector: 'dd', overlap: 0.6, speed: 0.85 });
 
     // Open all
 
