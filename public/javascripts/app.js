@@ -35,4 +35,4 @@ $().ready(function() {
     $( '.warning' ).show();
   }
 
-})();
+});
