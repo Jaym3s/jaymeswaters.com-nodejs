@@ -35,6 +35,12 @@ app.get('/', function(req, res){
   });
 });
 
+app.get('/box', function(req, res){
+  res.render('box', {
+    title: 'Jaymes Waters'
+  });
+});
+
 app.get('/minecraft', function(req, res) {
   res.render('minecraft', {
       title: 'Minecraft Ip'
