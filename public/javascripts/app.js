@@ -16,7 +16,9 @@ $().ready(function() {
 
     // Open all
 
-    $( '.list' ).makisu( 'open' );
+    setTimeout(function() {
+      $( '.list' ).makisu( 'open' );
+    }, 150);
 
     // Toggle on click
 
