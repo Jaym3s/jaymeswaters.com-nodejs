@@ -16,16 +16,17 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.compiler({ src: __dirname + '/public', enable: ['sass'] }));
   app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'), { maxAge: new Date(Date.now() + 1000000000) });
   app.enable('homeIp');
 });
 
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
+  app.use(express.compress());
 });
 
 // Routes
