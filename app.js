@@ -9,16 +9,15 @@ var app = module.exports = express.createServer();
 
 // Configuration
 
-app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.compiler({ src: __dirname + '/public', enable: ['sass'] }));
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'), { maxAge: new Date(Date.now() + 1000000000) });
-  app.enable('homeIp');
-});
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(express.compiler({ src: __dirname + '/public', enable: ['sass'] }));
+app.use(app.router);
+app.use(express.static(__dirname + '/public'), { maxAge: new Date(Date.now() + 1000000000) });
+app.enable('homeIp');
+app.use(express.compress());
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -26,7 +25,6 @@ app.configure('development', function(){
 
 app.configure('production', function(){
   app.use(express.errorHandler());
-  app.use(express.compress());
 });
 
 // Routes
